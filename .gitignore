@@ -1,0 +1,10 @@
+# Ignore virtual environment directory
+venv/
+
+# Ignore Python bytecode/cache files
+__pycache__/
+*.pyc
+*.pyo
+
+# Ignore models folder (if you don't want to track saved models)
+models/
