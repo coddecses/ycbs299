@@ -10,4 +10,6 @@ __pycache__/
 models/
 
 #ignore large data files
-data/
+data/fire_incidents.csv
+data/processed_fire_incidents.csv
+data/property_assessment.csv
