@@ -8,3 +8,6 @@ __pycache__/
 
 # Ignore models folder (if you don't want to track saved models)
 models/
+
+#ignore large data files
+data/
