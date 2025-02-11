@@ -3,7 +3,7 @@
   <Nodes>
     <Node ToolID="4">
       <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
-        <Position x="29" y="29" width="349" height="180" />
+        <Position x="89" y="53" width="301" height="180" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -21,7 +21,7 @@
       <ChildNodes>
         <Node ToolID="1">
           <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
-            <Position x="54" y="78" />
+            <Position x="114" y="102" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -37,9 +37,6 @@
               <DefaultAnnotationText>territoires-administratifs-casernes.shp</DefaultAnnotationText>
               <Left value="False" />
             </Annotation>
-            <Dependencies>
-              <Implicit />
-            </Dependencies>
             <MetaInfo connection="Output">
               <RecordInfo>
                 <Field name="NOM_CAS_AD" size="80" source="File: C:\Users\gowin\Documents\project\ycbs299\data\territoires-administratifs-casernes\territoires-administratifs-casernes.shp" type="V_WString" />
@@ -53,7 +50,7 @@
         </Node>
         <Node ToolID="2">
           <GuiSettings Plugin="AlteryxBasePluginsGui.AutoField.AutoField">
-            <Position x="162" y="78" />
+            <Position x="210" y="102" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -80,7 +77,7 @@
         </Node>
         <Node ToolID="3">
           <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
-            <Position x="294" y="78" />
+            <Position x="306" y="102" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -102,7 +99,7 @@
     </Node>
     <Node ToolID="11">
       <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
-        <Position x="412" y="29" width="509" height="342" />
+        <Position x="437" y="53" width="629" height="380" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -118,33 +115,80 @@
         </Annotation>
       </Properties>
       <ChildNodes>
-        <Node ToolID="5">
-          <GuiSettings Plugin="AlteryxSpatialPluginsGui.MakeGrid.MakeGrid">
-            <Position x="437" y="78" />
+        <Node ToolID="13">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
+            <Position x="942" y="318" />
           </GuiSettings>
           <Properties>
             <Configuration>
-              <SpatialObjIn>SpatialObj</SpatialObjIn>
-              <GridSize value="0.5" />
-              <Units>Kilometers</Units>
-              <GridPerObject value="True" />
-              <ClipToPoly value="True" />
+              <File FileFormat="12" MaxRecords="">C:\Users\gowin\Documents\project\ycbs299\data\caserne-area-sq-km\caserne-area-sq-km.shp</File>
+              <Passwords />
+              <Disable>False</Disable>
+              <FormatSpecificOptions>
+                <SpatialObjField>SpatialObj</SpatialObjField>
+                <Projection />
+                <CodePage>0</CodePage>
+              </FormatSpecificOptions>
+              <MultiFile value="False" />
             </Configuration>
             <Annotation DisplayMode="0">
               <Name />
-              <DefaultAnnotationText>0.5 Kilometers Grid</DefaultAnnotationText>
+              <DefaultAnnotationText>caserne-area-sq-km.shp</DefaultAnnotationText>
               <Left value="False" />
             </Annotation>
+            <Dependencies>
+              <Implicit />
+            </Dependencies>
           </Properties>
-          <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxMakeGrid" />
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
         </Node>
-        <Node ToolID="6">
-          <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
-            <Position x="534" y="78" />
+        <Node ToolID="12">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+            <Position x="739" y="235" />
           </GuiSettings>
           <Properties>
             <Configuration>
-              <TempFile>C:\Users\gowin\AppData\Local\Temp\Alteryx\Engine_10980_1f48d0ca49104bbd88ce7a35f9a37856_\Engine_10980_4e8214bb846544ea9b9f025d101f32c1~.yxdb</TempFile>
+              <FormulaFields>
+                <FormulaField expression="Round([Sum_AreaSqKm], 0.01)&#xA;" field="Sum_AreaSqKm" size="8" type="Double" enabled="true" />
+              </FormulaFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText><![CDATA[Sum_AreaSqKm = Round([Sum_AreaSqKm], 0.01)
+
+]]></DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+        </Node>
+        <Node ToolID="9">
+          <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+            <Position x="655" y="235" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <SummarizeFields>
+                <SummarizeField field="NO_CAS_ADM" action="GroupBy" rename="NO_CAS_ADM" />
+                <SummarizeField field="OBJECTID" action="GroupBy" rename="OBJECTID" />
+                <SummarizeField field="AreaSqKm" action="Sum" rename="Sum_AreaSqKm" />
+              </SummarizeFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+        </Node>
+        <Node ToolID="8">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+            <Position x="655" y="175" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <TempFile>C:\Users\gowin\AppData\Local\Temp\Alteryx\Engine_12088_e91365dcb5bb4473bf32a4b007e1f0eb_\Engine_12088_cfeb29c0bef74e2ca6a91c5589a65785~.yxdb</TempFile>
               <TempFileDataProfiling />
               <Layout>
                 <ViewMode>Single</ViewMode>
@@ -171,7 +215,7 @@
         </Node>
         <Node ToolID="7">
           <GuiSettings Plugin="AlteryxSpatialPluginsGui.SpatialInfo.SpatialInfo">
-            <Position x="534" y="150" />
+            <Position x="559" y="175" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -188,13 +232,13 @@
           </Properties>
           <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSpatialInfo" />
         </Node>
-        <Node ToolID="8">
+        <Node ToolID="6">
           <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
-            <Position x="630" y="150" />
+            <Position x="559" y="102" />
           </GuiSettings>
           <Properties>
             <Configuration>
-              <TempFile>C:\Users\gowin\AppData\Local\Temp\Alteryx\Engine_10980_1f48d0ca49104bbd88ce7a35f9a37856_\Engine_10980_58dfa4f8efe64ce39e5c5a61fbf2ea59~.yxdb</TempFile>
+              <TempFile>C:\Users\gowin\AppData\Local\Temp\Alteryx\Engine_12088_e91365dcb5bb4473bf32a4b007e1f0eb_\Engine_12088_ad0e0edd68164dc69f3b36d82523da24~.yxdb</TempFile>
               <TempFileDataProfiling />
               <Layout>
                 <ViewMode>Single</ViewMode>
@@ -219,16 +263,50 @@
           </Properties>
           <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
         </Node>
-        <Node ToolID="9">
-          <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
-            <Position x="630" y="210" />
+        <Node ToolID="5">
+          <GuiSettings Plugin="AlteryxSpatialPluginsGui.MakeGrid.MakeGrid">
+            <Position x="462" y="102" />
           </GuiSettings>
           <Properties>
             <Configuration>
-              <SummarizeFields>
-                <SummarizeField field="NO_CAS_ADM" action="GroupBy" rename="NO_CAS_ADM" />
-                <SummarizeField field="AreaSqKm" action="Sum" rename="Sum_AreaSqKm" />
-              </SummarizeFields>
+              <SpatialObjIn>SpatialObj</SpatialObjIn>
+              <GridSize value="0.5" />
+              <Units>Kilometers</Units>
+              <GridPerObject value="True" />
+              <ClipToPoly value="True" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>0.5 Kilometers Grid</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxMakeGrid" />
+        </Node>
+        <Node ToolID="14">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+            <Position x="846" y="318" />
+          </GuiSettings>
+          <Properties>
+            <Configuration joinByRecordPos="False">
+              <JoinInfo connection="Left">
+                <Field field="NO_CAS_ADM" />
+              </JoinInfo>
+              <JoinInfo connection="Right">
+                <Field field="NO_CAS_ADM" />
+              </JoinInfo>
+              <SelectConfiguration>
+                <Configuration outputConnection="Join">
+                  <OrderChanged value="False" />
+                  <CommaDecimal value="False" />
+                  <SelectFields>
+                    <SelectField field="Left_NOM_CAS_AD" selected="False" input="Left_" />
+                    <SelectField field="Right_NO_CAS_ADM" selected="False" rename="Right_NO_CAS_ADM" input="Right_" />
+                    <SelectField field="Right_OBJECTID" selected="False" rename="Right_OBJECTID" input="Right_" />
+                    <SelectField field="*Unknown" selected="True" />
+                  </SelectFields>
+                </Configuration>
+              </SelectConfiguration>
             </Configuration>
             <Annotation DisplayMode="0">
               <Name />
@@ -236,22 +314,25 @@
               <Left value="False" />
             </Annotation>
           </Properties>
-          <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
         </Node>
-        <Node ToolID="10">
+        <Node ToolID="15">
           <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
-            <Position x="798" y="138" />
+            <Position x="942" y="246" />
           </GuiSettings>
           <Properties>
             <Configuration>
-              <TempFile>C:\Users\gowin\AppData\Local\Temp\Alteryx\Engine_10980_1f48d0ca49104bbd88ce7a35f9a37856_\Engine_10980_0598de0381e341068afa8f7b00b8da43~.yxdb</TempFile>
+              <TempFile>C:\Users\gowin\AppData\Local\Temp\Alteryx\Engine_12088_e91365dcb5bb4473bf32a4b007e1f0eb_\Engine_12088_2656a03caf854079a7896880ecf3a786~.yxdb</TempFile>
               <TempFileDataProfiling />
               <Layout>
                 <ViewMode>Single</ViewMode>
                 <ViewSize value="100" />
                 <View1>
-                  <DefaultTab>Profile</DefaultTab>
+                  <DefaultTab>Map</DefaultTab>
                   <Hints>
+                    <Map>
+                      <BaseMap>[No Base Map]</BaseMap>
+                    </Map>
                     <Table />
                   </Hints>
                 </View1>
@@ -266,29 +347,9 @@
           </Properties>
           <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
         </Node>
-        <Node ToolID="12">
-          <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
-            <Position x="714" y="210" />
-          </GuiSettings>
-          <Properties>
-            <Configuration>
-              <FormulaFields>
-                <FormulaField expression="Round([Sum_AreaSqKm], 0.01)&#xA;" field="Sum_AreaSqKm" size="8" type="Double" enabled="true" />
-              </FormulaFields>
-            </Configuration>
-            <Annotation DisplayMode="0">
-              <Name />
-              <DefaultAnnotationText><![CDATA[Sum_AreaSqKm = Round([Sum_AreaSqKm], 0.01)
-
-]]></DefaultAnnotationText>
-              <Left value="False" />
-            </Annotation>
-          </Properties>
-          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
-        </Node>
-        <Node ToolID="13">
+        <Node ToolID="16">
           <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
-            <Position x="798" y="210" />
+            <Position x="846" y="234" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -316,6 +377,34 @@
           </Properties>
           <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
         </Node>
+        <Node ToolID="17">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+            <Position x="846" y="162" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <TempFile>C:\Users\gowin\AppData\Local\Temp\Alteryx\Engine_12088_e91365dcb5bb4473bf32a4b007e1f0eb_\Engine_12088_b83c1000d74e402b8946124b48b78bdc~.yxdb</TempFile>
+              <TempFileDataProfiling />
+              <Layout>
+                <ViewMode>Single</ViewMode>
+                <ViewSize value="100" />
+                <View1>
+                  <DefaultTab>Profile</DefaultTab>
+                  <Hints>
+                    <Table />
+                  </Hints>
+                </View1>
+                <View2 />
+              </Layout>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+        </Node>
       </ChildNodes>
     </Node>
   </Nodes>
@@ -333,31 +422,47 @@
       <Destination ToolID="5" Connection="Input" />
     </Connection>
     <Connection>
-      <Origin ToolID="5" Connection="Output" />
-      <Destination ToolID="6" Connection="Input" />
+      <Origin ToolID="3" Connection="Output" />
+      <Destination ToolID="14" Connection="Left" />
     </Connection>
     <Connection>
-      <Origin ToolID="5" Connection="Output" />
-      <Destination ToolID="7" Connection="Input" />
+      <Origin ToolID="12" Connection="Output" />
+      <Destination ToolID="14" Connection="Right" />
     </Connection>
     <Connection>
-      <Origin ToolID="7" Connection="Output" />
-      <Destination ToolID="8" Connection="Input" />
+      <Origin ToolID="12" Connection="Output" />
+      <Destination ToolID="16" Connection="Input" />
     </Connection>
     <Connection>
-      <Origin ToolID="7" Connection="Output" />
-      <Destination ToolID="9" Connection="Input" />
+      <Origin ToolID="12" Connection="Output" />
+      <Destination ToolID="17" Connection="Input" />
     </Connection>
     <Connection>
       <Origin ToolID="9" Connection="Output" />
       <Destination ToolID="12" Connection="Input" />
     </Connection>
     <Connection>
-      <Origin ToolID="12" Connection="Output" />
-      <Destination ToolID="10" Connection="Input" />
+      <Origin ToolID="7" Connection="Output" />
+      <Destination ToolID="9" Connection="Input" />
     </Connection>
     <Connection>
-      <Origin ToolID="12" Connection="Output" />
+      <Origin ToolID="7" Connection="Output" />
+      <Destination ToolID="8" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="5" Connection="Output" />
+      <Destination ToolID="7" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="5" Connection="Output" />
+      <Destination ToolID="6" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="14" Connection="Join" />
+      <Destination ToolID="15" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="14" Connection="Join" />
       <Destination ToolID="13" Connection="Input" />
     </Connection>
   </Connections>
