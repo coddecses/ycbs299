@@ -3,7 +3,7 @@
   <Nodes>
     <Node ToolID="4">
       <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
-        <Position x="89" y="53" width="301" height="180" />
+        <Position x="54" y="54" width="301" height="180" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -21,7 +21,7 @@
       <ChildNodes>
         <Node ToolID="1">
           <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
-            <Position x="114" y="102" />
+            <Position x="79" y="103" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -50,7 +50,7 @@
         </Node>
         <Node ToolID="2">
           <GuiSettings Plugin="AlteryxBasePluginsGui.AutoField.AutoField">
-            <Position x="210" y="102" />
+            <Position x="175" y="103" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -77,7 +77,7 @@
         </Node>
         <Node ToolID="3">
           <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
-            <Position x="306" y="102" />
+            <Position x="271" y="103" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -99,7 +99,7 @@
     </Node>
     <Node ToolID="11">
       <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
-        <Position x="437" y="53" width="629" height="380" />
+        <Position x="401" y="41" width="629" height="394" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -117,7 +117,7 @@
       <ChildNodes>
         <Node ToolID="13">
           <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
-            <Position x="942" y="318" />
+            <Position x="907" y="319" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -136,25 +136,22 @@
               <DefaultAnnotationText>caserne-area-sq-km.shp</DefaultAnnotationText>
               <Left value="False" />
             </Annotation>
-            <Dependencies>
-              <Implicit />
-            </Dependencies>
           </Properties>
           <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
         </Node>
         <Node ToolID="12">
           <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
-            <Position x="739" y="235" />
+            <Position x="702" y="234" />
           </GuiSettings>
           <Properties>
             <Configuration>
               <FormulaFields>
-                <FormulaField expression="Round([Sum_AreaSqKm], 0.01)&#xA;" field="Sum_AreaSqKm" size="8" type="Double" enabled="true" />
+                <FormulaField expression="Round([AREA_SQ_KM], 0.01)&#xA;" field="AREA_SQ_KM" size="8" type="Double" enabled="true" />
               </FormulaFields>
             </Configuration>
             <Annotation DisplayMode="0">
               <Name />
-              <DefaultAnnotationText><![CDATA[Sum_AreaSqKm = Round([Sum_AreaSqKm], 0.01)
+              <DefaultAnnotationText><![CDATA[AREA_SQ_KM = Round([AREA_SQ_KM], 0.01)
 
 ]]></DefaultAnnotationText>
               <Left value="False" />
@@ -164,14 +161,14 @@
         </Node>
         <Node ToolID="9">
           <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
-            <Position x="655" y="235" />
+            <Position x="620" y="236" />
           </GuiSettings>
           <Properties>
             <Configuration>
               <SummarizeFields>
                 <SummarizeField field="NO_CAS_ADM" action="GroupBy" rename="NO_CAS_ADM" />
                 <SummarizeField field="OBJECTID" action="GroupBy" rename="OBJECTID" />
-                <SummarizeField field="AreaSqKm" action="Sum" rename="Sum_AreaSqKm" />
+                <SummarizeField field="AreaSqKm" action="Sum" rename="AREA_SQ_KM" />
               </SummarizeFields>
             </Configuration>
             <Annotation DisplayMode="0">
@@ -184,11 +181,11 @@
         </Node>
         <Node ToolID="8">
           <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
-            <Position x="655" y="175" />
+            <Position x="620" y="176" />
           </GuiSettings>
           <Properties>
             <Configuration>
-              <TempFile>C:\Users\gowin\AppData\Local\Temp\Alteryx\Engine_12088_e91365dcb5bb4473bf32a4b007e1f0eb_\Engine_12088_cfeb29c0bef74e2ca6a91c5589a65785~.yxdb</TempFile>
+              <TempFile>C:\Users\gowin\AppData\Local\Temp\Alteryx\Engine_9936_199b23bb485a4fab92f7739e4ba89d11_\Engine_9936_173d34e3e2e74b96aada1d9ce566c79c~.yxdb</TempFile>
               <TempFileDataProfiling />
               <Layout>
                 <ViewMode>Single</ViewMode>
@@ -215,7 +212,7 @@
         </Node>
         <Node ToolID="7">
           <GuiSettings Plugin="AlteryxSpatialPluginsGui.SpatialInfo.SpatialInfo">
-            <Position x="559" y="175" />
+            <Position x="524" y="176" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -234,11 +231,11 @@
         </Node>
         <Node ToolID="6">
           <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
-            <Position x="559" y="102" />
+            <Position x="524" y="102" />
           </GuiSettings>
           <Properties>
             <Configuration>
-              <TempFile>C:\Users\gowin\AppData\Local\Temp\Alteryx\Engine_12088_e91365dcb5bb4473bf32a4b007e1f0eb_\Engine_12088_ad0e0edd68164dc69f3b36d82523da24~.yxdb</TempFile>
+              <TempFile>C:\Users\gowin\AppData\Local\Temp\Alteryx\Engine_9936_199b23bb485a4fab92f7739e4ba89d11_\Engine_9936_1bc1bb2232d04ae8939ca6d15dd0178a~.yxdb</TempFile>
               <TempFileDataProfiling />
               <Layout>
                 <ViewMode>Single</ViewMode>
@@ -265,7 +262,7 @@
         </Node>
         <Node ToolID="5">
           <GuiSettings Plugin="AlteryxSpatialPluginsGui.MakeGrid.MakeGrid">
-            <Position x="462" y="102" />
+            <Position x="426" y="102" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -285,7 +282,7 @@
         </Node>
         <Node ToolID="14">
           <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
-            <Position x="846" y="318" />
+            <Position x="811" y="319" />
           </GuiSettings>
           <Properties>
             <Configuration joinByRecordPos="False">
@@ -318,11 +315,11 @@
         </Node>
         <Node ToolID="15">
           <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
-            <Position x="942" y="246" />
+            <Position x="906" y="258" />
           </GuiSettings>
           <Properties>
             <Configuration>
-              <TempFile>C:\Users\gowin\AppData\Local\Temp\Alteryx\Engine_12088_e91365dcb5bb4473bf32a4b007e1f0eb_\Engine_12088_2656a03caf854079a7896880ecf3a786~.yxdb</TempFile>
+              <TempFile>C:\Users\gowin\AppData\Local\Temp\Alteryx\Engine_9936_199b23bb485a4fab92f7739e4ba89d11_\Engine_9936_715b62c59ab64bd2a50b6db9b3dba1cd~.yxdb</TempFile>
               <TempFileDataProfiling />
               <Layout>
                 <ViewMode>Single</ViewMode>
@@ -349,7 +346,7 @@
         </Node>
         <Node ToolID="16">
           <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
-            <Position x="846" y="234" />
+            <Position x="906" y="162" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -371,19 +368,66 @@
               <DefaultAnnotationText>caserne-area-sq-km.csv</DefaultAnnotationText>
               <Left value="False" />
             </Annotation>
-            <Dependencies>
-              <Implicit />
-            </Dependencies>
           </Properties>
           <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
         </Node>
         <Node ToolID="17">
           <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
-            <Position x="846" y="162" />
+            <Position x="811" y="163" />
           </GuiSettings>
           <Properties>
             <Configuration>
-              <TempFile>C:\Users\gowin\AppData\Local\Temp\Alteryx\Engine_12088_e91365dcb5bb4473bf32a4b007e1f0eb_\Engine_12088_b83c1000d74e402b8946124b48b78bdc~.yxdb</TempFile>
+              <TempFile>C:\Users\gowin\AppData\Local\Temp\Alteryx\Engine_9936_199b23bb485a4fab92f7739e4ba89d11_\Engine_9936_b6a3d61100c547b39b63c529d643d878~.yxdb</TempFile>
+              <TempFileDataProfiling />
+              <Layout>
+                <ViewMode>Single</ViewMode>
+                <ViewSize value="100" />
+                <View1>
+                  <DefaultTab>Profile</DefaultTab>
+                  <Hints>
+                    <Table />
+                  </Hints>
+                </View1>
+                <View2 />
+              </Layout>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+        </Node>
+        <Node ToolID="18">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+            <Position x="798" y="234" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="NO_CAS_ADM" selected="True" />
+                <SelectField field="AREA_SQ_KM" selected="True" />
+                <SelectField field="*Unknown" selected="False" />
+              </SelectFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+        </Node>
+        <Node ToolID="19">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+            <Position x="906" y="90" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <TempFile>C:\Users\gowin\AppData\Local\Temp\Alteryx\Engine_9936_199b23bb485a4fab92f7739e4ba89d11_\Engine_9936_98393727db444f11a22af15f9eb68df9~.yxdb</TempFile>
               <TempFileDataProfiling />
               <Layout>
                 <ViewMode>Single</ViewMode>
@@ -431,11 +475,11 @@
     </Connection>
     <Connection>
       <Origin ToolID="12" Connection="Output" />
-      <Destination ToolID="16" Connection="Input" />
+      <Destination ToolID="17" Connection="Input" />
     </Connection>
     <Connection>
       <Origin ToolID="12" Connection="Output" />
-      <Destination ToolID="17" Connection="Input" />
+      <Destination ToolID="18" Connection="Input" />
     </Connection>
     <Connection>
       <Origin ToolID="9" Connection="Output" />
@@ -464,6 +508,14 @@
     <Connection>
       <Origin ToolID="14" Connection="Join" />
       <Destination ToolID="13" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="18" Connection="Output" />
+      <Destination ToolID="16" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="18" Connection="Output" />
+      <Destination ToolID="19" Connection="Input" />
     </Connection>
   </Connections>
   <Properties>
