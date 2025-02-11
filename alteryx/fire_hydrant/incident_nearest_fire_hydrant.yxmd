@@ -1,0 +1,742 @@
+<?xml version="1.0"?>
+<AlteryxDocument yxmdVer="2022.3">
+  <Nodes>
+    <Node ToolID="34">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="378" y="438" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="LATITUDE" selected="True" type="Double" size="8" />
+            <SelectField field="LONGITUDE" selected="True" type="Double" size="8" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="45">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+        <Position x="438" y="558" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <TempFile>C:\Users\moise\AppData\Local\Temp\Engine_3536_6a4bb50f3748a54091077c882aff61d3_\Engine_3536_100db1638779604eb09f1aa6c6946a38~.yxdb</TempFile>
+          <TempFileDataProfiling />
+          <Layout>
+            <ViewMode>Single</ViewMode>
+            <ViewSize value="100" />
+            <View1>
+              <DefaultTab>Profile</DefaultTab>
+              <Hints>
+                <Table />
+              </Hints>
+            </View1>
+            <View2 />
+          </Layout>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+    </Node>
+    <Node ToolID="46">
+      <GuiSettings Plugin="AlteryxSpatialPluginsGui.FindNearest.FindNearest">
+        <Position x="654" y="294" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Target SpatialObj="Incident" />
+          <Universe SpatialObj="fire_hydrant" />
+          <HowMany value="1" />
+          <MaxDistance value="20" />
+          <MaxDistanceUnits>Miles</MaxDistanceUnits>
+          <Ignore0 value="False" />
+          <DriveTimeDataSet>Latest</DriveTimeDataSet>
+          <SelectConfiguration>
+            <Configuration outputConnection="Matched">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Universe_LATITUDE" selected="True" rename="Universe_LATITUDE" input="Universe_" />
+                <SelectField field="Universe_LONGITUDE" selected="True" rename="Universe_LONGITUDE" input="Universe_" />
+                <SelectField field="Universe_Incident" selected="True" rename="Universe_Incident" input="Universe_" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxFindNearest" />
+    </Node>
+    <Node ToolID="47">
+      <GuiSettings Plugin="AlteryxSpatialPluginsGui.CreatePoints.CreatePoints">
+        <Position x="474" y="438" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Fields fieldX="LONGITUDE" fieldY="LATITUDE" />
+          <Mode>Double</Mode>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxCreatePoints" />
+    </Node>
+    <Node ToolID="48">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="582" y="438" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="ADRESSE" selected="True" />
+            <SelectField field="COORDONNEE_SPATIALE_X" selected="True" />
+            <SelectField field="COORDONNEE_SPATIALE_Y" selected="True" />
+            <SelectField field="ELEVATION_TERRAIN" selected="True" />
+            <SelectField field="ID_BI" selected="True" />
+            <SelectField field="ID_POINT" selected="True" />
+            <SelectField field="JURIDICTION" selected="True" />
+            <SelectField field="PRECISION_DATE_INSTALL" selected="True" />
+            <SelectField field="PROPRIETAIRE" selected="True" />
+            <SelectField field="PROVENANCE_DONNEE" selected="True" />
+            <SelectField field="LATITUDE" selected="True" />
+            <SelectField field="LONGITUDE" selected="True" />
+            <SelectField field="Centroid" selected="True" rename="fire_hydrant" />
+            <SelectField field="*Unknown" selected="False" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="49">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+        <Position x="762" y="174" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <TempFile>C:\Users\moise\AppData\Local\Temp\Engine_3536_6a4bb50f3748a54091077c882aff61d3_\Engine_3536_1e1d926bea55d941b95c9dedef1111e3~.yxdb</TempFile>
+          <TempFileDataProfiling />
+          <Layout>
+            <ViewMode>Single</ViewMode>
+            <ViewSize value="100" />
+            <View1>
+              <DefaultTab>Map</DefaultTab>
+              <Hints>
+                <Map>
+                  <BaseMap>[No Base Map]</BaseMap>
+                </Map>
+                <Table />
+              </Hints>
+            </View1>
+            <View2 />
+          </Layout>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+    </Node>
+    <Node ToolID="50">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="798" y="282" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="INCIDENT_NBR" selected="True" />
+            <SelectField field="INCIDENT_TYPE_DESC" selected="True" />
+            <SelectField field="DESCRIPTION_GROUPE" selected="True" />
+            <SelectField field="CASERNE" selected="True" />
+            <SelectField field="DIVISION" selected="True" />
+            <SelectField field="NOMBRE_UNITES" selected="True" />
+            <SelectField field="Incident" selected="True" />
+            <SelectField field="ID_BI" selected="True" />
+            <SelectField field="ID_POINT" selected="True" />
+            <SelectField field="fire_hydrant" selected="True" />
+            <SelectField field="FindNearestRank" selected="True" />
+            <SelectField field="DistanceMiles" selected="True" />
+            <SelectField field="Direction" selected="True" />
+            <SelectField field="Centroid" selected="False" rename="Incident" />
+            <SelectField field="*Unknown" selected="False" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="52">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+        <Position x="906" y="174" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <TempFile>C:\Users\moise\AppData\Local\Temp\Engine_3536_6a4bb50f3748a54091077c882aff61d3_\Engine_3536_d7cecb7edce2d44f8eac44cdf08b087f~.yxdb</TempFile>
+          <TempFileDataProfiling />
+          <Layout>
+            <ViewMode>Single</ViewMode>
+            <ViewSize value="100" />
+            <View1>
+              <DefaultTab>Map</DefaultTab>
+              <Hints>
+                <Map>
+                  <BaseMap>[No Base Map]</BaseMap>
+                </Map>
+                <Table />
+              </Hints>
+            </View1>
+            <View2 />
+          </Layout>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+    </Node>
+    <Node ToolID="53">
+      <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+        <Position x="942" y="282" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SummarizeFields>
+            <SummarizeField field="CASERNE" action="GroupBy" rename="CASERNE" />
+            <SummarizeField field="DistanceMiles" action="Median" rename="Median_DistanceMiles" />
+            <SummarizeField field="ID_BI" action="Count" rename="Count" />
+          </SummarizeFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+    </Node>
+    <Node ToolID="54">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+        <Position x="1038" y="174" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <TempFile>C:\Users\moise\AppData\Local\Temp\Engine_3536_6a4bb50f3748a54091077c882aff61d3_\Engine_3536_4313ee5f3adc2b4b961ba27c894f5921~.yxdb</TempFile>
+          <TempFileDataProfiling />
+          <Layout>
+            <ViewMode>Single</ViewMode>
+            <ViewSize value="100" />
+            <View1>
+              <DefaultTab>Profile</DefaultTab>
+              <Hints>
+                <Table />
+              </Hints>
+            </View1>
+            <View2 />
+          </Layout>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+    </Node>
+    <Node ToolID="55">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
+        <Position x="906" y="390" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <File MaxRecords="" FileFormat="0">D:\McGill\Session 3\Session 3\incident_nearest_fire_hydrant.csv</File>
+          <Passwords />
+          <Disable>False</Disable>
+          <FormatSpecificOptions>
+            <LineEndStyle>CRLF</LineEndStyle>
+            <Delimeter>,</Delimeter>
+            <ForceQuotes>False</ForceQuotes>
+            <HeaderRow>True</HeaderRow>
+            <CodePage>28591</CodePage>
+            <WriteBOM>True</WriteBOM>
+          </FormatSpecificOptions>
+          <MultiFile value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>incident_nearest_fire_hydrant.csv</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
+    </Node>
+    <Node ToolID="43">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="113" y="389" width="252" height="165" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>Fire hydrants (Borne Incendies)</Caption>
+          <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="25" />
+          <Disabled value="False" />
+          <Folded value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="27">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+            <Position x="138" y="438" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Passwords />
+              <File RecordLimit="" SearchSubDirs="False" FileFormat="0" OutputFileName="">D:\McGill\courses\practical_machine_learning\python\borne_incendie\cleaned_borne_incendie.csv</File>
+              <FormatSpecificOptions>
+                <HeaderRow>True</HeaderRow>
+                <IgnoreErrors>False</IgnoreErrors>
+                <AllowShareWrite>False</AllowShareWrite>
+                <ImportLine>1</ImportLine>
+                <FieldLen>254</FieldLen>
+                <SingleThreadRead>False</SingleThreadRead>
+                <IgnoreQuotes>DoubleQuotes</IgnoreQuotes>
+                <Delimeter>,</Delimeter>
+                <QuoteRecordBreak>False</QuoteRecordBreak>
+                <CodePage>28591</CodePage>
+              </FormatSpecificOptions>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>cleaned_borne_incendie.csv</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+            <Dependencies>
+              <Implicit />
+            </Dependencies>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="ADRESSE" size="254" source="File: D:\McGill\courses\practical_machine_learning\python\borne_incendie\cleaned_borne_incendie.csv" type="V_String" />
+                <Field name="COORDONNEE_SPATIALE_X" size="254" source="File: D:\McGill\courses\practical_machine_learning\python\borne_incendie\cleaned_borne_incendie.csv" type="V_String" />
+                <Field name="COORDONNEE_SPATIALE_Y" size="254" source="File: D:\McGill\courses\practical_machine_learning\python\borne_incendie\cleaned_borne_incendie.csv" type="V_String" />
+                <Field name="ELEVATION_TERRAIN" size="254" source="File: D:\McGill\courses\practical_machine_learning\python\borne_incendie\cleaned_borne_incendie.csv" type="V_String" />
+                <Field name="ID_BI" size="254" source="File: D:\McGill\courses\practical_machine_learning\python\borne_incendie\cleaned_borne_incendie.csv" type="V_String" />
+                <Field name="ID_POINT" size="254" source="File: D:\McGill\courses\practical_machine_learning\python\borne_incendie\cleaned_borne_incendie.csv" type="V_String" />
+                <Field name="JURIDICTION" size="254" source="File: D:\McGill\courses\practical_machine_learning\python\borne_incendie\cleaned_borne_incendie.csv" type="V_String" />
+                <Field name="PRECISION_DATE_INSTALL" size="254" source="File: D:\McGill\courses\practical_machine_learning\python\borne_incendie\cleaned_borne_incendie.csv" type="V_String" />
+                <Field name="PROPRIETAIRE" size="254" source="File: D:\McGill\courses\practical_machine_learning\python\borne_incendie\cleaned_borne_incendie.csv" type="V_String" />
+                <Field name="PROVENANCE_DONNEE" size="254" source="File: D:\McGill\courses\practical_machine_learning\python\borne_incendie\cleaned_borne_incendie.csv" type="V_String" />
+                <Field name="LATITUDE" size="254" source="File: D:\McGill\courses\practical_machine_learning\python\borne_incendie\cleaned_borne_incendie.csv" type="V_String" />
+                <Field name="LONGITUDE" size="254" source="File: D:\McGill\courses\practical_machine_learning\python\borne_incendie\cleaned_borne_incendie.csv" type="V_String" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+        </Node>
+        <Node ToolID="28">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AutoField.AutoField">
+            <Position x="246" y="438" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Fields>
+                <Field field="ADRESSE" selected="True" />
+                <Field field="COORDONNEE_SPATIALE_X" selected="True" />
+                <Field field="COORDONNEE_SPATIALE_Y" selected="True" />
+                <Field field="ELEVATION_TERRAIN" selected="True" />
+                <Field field="ID_BI" selected="True" />
+                <Field field="ID_POINT" selected="True" />
+                <Field field="JURIDICTION" selected="True" />
+                <Field field="PRECISION_DATE_INSTALL" selected="True" />
+                <Field field="PROPRIETAIRE" selected="True" />
+                <Field field="PROVENANCE_DONNEE" selected="True" />
+                <Field field="LATITUDE" selected="True" />
+                <Field field="LONGITUDE" selected="True" />
+                <Field field="*Unknown" selected="True" />
+              </Fields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="ADRESSE" size="49" source="File: D:\McGill\courses\practical_machine_learning\python\borne_incendie\cleaned_borne_incendie.csv" type="V_String" />
+                <Field name="COORDONNEE_SPATIALE_X" source="File: D:\McGill\courses\practical_machine_learning\python\borne_incendie\cleaned_borne_incendie.csv" type="Double" />
+                <Field name="COORDONNEE_SPATIALE_Y" source="File: D:\McGill\courses\practical_machine_learning\python\borne_incendie\cleaned_borne_incendie.csv" type="Double" />
+                <Field name="ELEVATION_TERRAIN" source="File: D:\McGill\courses\practical_machine_learning\python\borne_incendie\cleaned_borne_incendie.csv" type="Double" />
+                <Field name="ID_BI" source="File: D:\McGill\courses\practical_machine_learning\python\borne_incendie\cleaned_borne_incendie.csv" type="Int32" />
+                <Field name="ID_POINT" source="File: D:\McGill\courses\practical_machine_learning\python\borne_incendie\cleaned_borne_incendie.csv" type="Int32" />
+                <Field name="JURIDICTION" size="6" source="File: D:\McGill\courses\practical_machine_learning\python\borne_incendie\cleaned_borne_incendie.csv" type="String" />
+                <Field name="PRECISION_DATE_INSTALL" size="41" source="File: D:\McGill\courses\practical_machine_learning\python\borne_incendie\cleaned_borne_incendie.csv" type="String" />
+                <Field name="PROPRIETAIRE" size="23" source="File: D:\McGill\courses\practical_machine_learning\python\borne_incendie\cleaned_borne_incendie.csv" type="V_String" />
+                <Field name="PROVENANCE_DONNEE" size="33" source="File: D:\McGill\courses\practical_machine_learning\python\borne_incendie\cleaned_borne_incendie.csv" type="V_String" />
+                <Field name="LATITUDE" size="18" source="File: D:\McGill\courses\practical_machine_learning\python\borne_incendie\cleaned_borne_incendie.csv" type="String" />
+                <Field name="LONGITUDE" size="18" source="File: D:\McGill\courses\practical_machine_learning\python\borne_incendie\cleaned_borne_incendie.csv" type="String" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxAutoField" />
+        </Node>
+      </ChildNodes>
+    </Node>
+    <Node ToolID="44">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="53" y="53" width="469" height="250" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>Incidents</Caption>
+          <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="25" />
+          <Disabled value="False" />
+          <Folded value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="10">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+            <Position x="78" y="186" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Passwords />
+              <File RecordLimit="" SearchSubDirs="False" FileFormat="0" OutputFileName="">D:\McGill\courses\practical_machine_learning\python\borne_incendie\incidents-clean.csv</File>
+              <FormatSpecificOptions>
+                <HeaderRow>True</HeaderRow>
+                <IgnoreErrors>False</IgnoreErrors>
+                <AllowShareWrite>False</AllowShareWrite>
+                <ImportLine>1</ImportLine>
+                <FieldLen>254</FieldLen>
+                <SingleThreadRead>False</SingleThreadRead>
+                <IgnoreQuotes>DoubleQuotes</IgnoreQuotes>
+                <Delimeter>,</Delimeter>
+                <QuoteRecordBreak>False</QuoteRecordBreak>
+                <CodePage>28591</CodePage>
+              </FormatSpecificOptions>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>incidents-clean.csv</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+            <Dependencies>
+              <Implicit />
+            </Dependencies>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="INCIDENT_NBR" size="254" source="File: D:\McGill\courses\practical_machine_learning\python\borne_incendie\incidents-clean.csv" type="V_String" />
+                <Field name="CREATION_DATE" size="254" source="File: D:\McGill\courses\practical_machine_learning\python\borne_incendie\incidents-clean.csv" type="V_String" />
+                <Field name="INCIDENT_TYPE_DESC" size="254" source="File: D:\McGill\courses\practical_machine_learning\python\borne_incendie\incidents-clean.csv" type="V_String" />
+                <Field name="DESCRIPTION_GROUPE" size="254" source="File: D:\McGill\courses\practical_machine_learning\python\borne_incendie\incidents-clean.csv" type="V_String" />
+                <Field name="CASERNE" size="254" source="File: D:\McGill\courses\practical_machine_learning\python\borne_incendie\incidents-clean.csv" type="V_String" />
+                <Field name="NOM_VILLE" size="254" source="File: D:\McGill\courses\practical_machine_learning\python\borne_incendie\incidents-clean.csv" type="V_String" />
+                <Field name="NOM_ARROND" size="254" source="File: D:\McGill\courses\practical_machine_learning\python\borne_incendie\incidents-clean.csv" type="V_String" />
+                <Field name="DIVISION" size="254" source="File: D:\McGill\courses\practical_machine_learning\python\borne_incendie\incidents-clean.csv" type="V_String" />
+                <Field name="LATITUDE" size="254" source="File: D:\McGill\courses\practical_machine_learning\python\borne_incendie\incidents-clean.csv" type="V_String" />
+                <Field name="LONGITUDE" size="254" source="File: D:\McGill\courses\practical_machine_learning\python\borne_incendie\incidents-clean.csv" type="V_String" />
+                <Field name="NOMBRE_UNITES" size="254" source="File: D:\McGill\courses\practical_machine_learning\python\borne_incendie\incidents-clean.csv" type="V_String" />
+                <Field name="DESC_GROUP_ENGLISH" size="254" source="File: D:\McGill\courses\practical_machine_learning\python\borne_incendie\incidents-clean.csv" type="V_String" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+        </Node>
+        <Node ToolID="11">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AutoField.AutoField">
+            <Position x="163" y="187" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Fields>
+                <Field field="CREATION_DATE_TIME" selected="True" />
+                <Field field="INCIDENT_TYPE_DESC" selected="True" />
+                <Field field="DESCRIPTION_GROUPE" selected="True" />
+                <Field field="NOM_VILLE" selected="True" />
+                <Field field="NOM_ARROND" selected="True" />
+                <Field field="*Unknown" selected="True" />
+              </Fields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="INCIDENT_NBR" source="File: D:\McGill\courses\practical_machine_learning\python\borne_incendie\incidents-clean.csv" type="Int32" />
+                <Field name="CREATION_DATE" source="File: D:\McGill\courses\practical_machine_learning\python\borne_incendie\incidents-clean.csv" type="Date" />
+                <Field name="INCIDENT_TYPE_DESC" size="32" source="File: D:\McGill\courses\practical_machine_learning\python\borne_incendie\incidents-clean.csv" type="V_String" />
+                <Field name="DESCRIPTION_GROUPE" size="23" source="File: D:\McGill\courses\practical_machine_learning\python\borne_incendie\incidents-clean.csv" type="String" />
+                <Field name="CASERNE" source="File: D:\McGill\courses\practical_machine_learning\python\borne_incendie\incidents-clean.csv" type="Byte" />
+                <Field name="NOM_VILLE" size="24" source="File: D:\McGill\courses\practical_machine_learning\python\borne_incendie\incidents-clean.csv" type="V_String" />
+                <Field name="NOM_ARROND" size="43" source="File: D:\McGill\courses\practical_machine_learning\python\borne_incendie\incidents-clean.csv" type="V_String" />
+                <Field name="DIVISION" source="File: D:\McGill\courses\practical_machine_learning\python\borne_incendie\incidents-clean.csv" type="Byte" />
+                <Field name="LATITUDE" source="File: D:\McGill\courses\practical_machine_learning\python\borne_incendie\incidents-clean.csv" type="Double" />
+                <Field name="LONGITUDE" source="File: D:\McGill\courses\practical_machine_learning\python\borne_incendie\incidents-clean.csv" type="Double" />
+                <Field name="NOMBRE_UNITES" source="File: D:\McGill\courses\practical_machine_learning\python\borne_incendie\incidents-clean.csv" type="Double" />
+                <Field name="DESC_GROUP_ENGLISH" size="13" source="File: D:\McGill\courses\practical_machine_learning\python\borne_incendie\incidents-clean.csv" type="String" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxAutoField" />
+        </Node>
+        <Node ToolID="12">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+            <Position x="247" y="187" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+        </Node>
+        <Node ToolID="13">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+            <Position x="438" y="102" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <TempFile>C:\Users\moise\AppData\Local\Temp\Engine_3536_6a4bb50f3748a54091077c882aff61d3_\Engine_3536_7cec70807dfe38439459e38c2ee45d8f~.yxdb</TempFile>
+              <TempFileDataProfiling />
+              <Layout>
+                <ViewMode>Single</ViewMode>
+                <ViewSize value="100" />
+                <View1>
+                  <DefaultTab>Map</DefaultTab>
+                  <Hints>
+                    <Map>
+                      <BaseMap>[No Base Map]</BaseMap>
+                    </Map>
+                    <Table />
+                  </Hints>
+                </View1>
+                <View2 />
+              </Layout>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+        </Node>
+        <Node ToolID="15">
+          <GuiSettings Plugin="AlteryxSpatialPluginsGui.CreatePoints.CreatePoints">
+            <Position x="331" y="187" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Fields fieldX="LONGITUDE" fieldY="LATITUDE" />
+              <Mode>Double</Mode>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxCreatePoints" />
+        </Node>
+        <Node ToolID="18">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+            <Position x="439" y="187" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Centroid" selected="True" rename="Incident" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+        </Node>
+      </ChildNodes>
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection>
+      <Origin ToolID="34" Connection="Output" />
+      <Destination ToolID="45" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="34" Connection="Output" />
+      <Destination ToolID="47" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="46" Connection="Matched" />
+      <Destination ToolID="49" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="46" Connection="Matched" />
+      <Destination ToolID="50" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="47" Connection="Output" />
+      <Destination ToolID="48" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="48" Connection="Output" />
+      <Destination ToolID="46" Connection="Universe" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="18" Connection="Output" />
+      <Destination ToolID="46" Connection="Targets" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="50" Connection="Output" />
+      <Destination ToolID="52" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="50" Connection="Output" />
+      <Destination ToolID="53" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="50" Connection="Output" />
+      <Destination ToolID="55" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="53" Connection="Output" />
+      <Destination ToolID="54" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="27" Connection="Output" />
+      <Destination ToolID="28" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="28" Connection="Output" />
+      <Destination ToolID="34" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="10" Connection="Output" />
+      <Destination ToolID="11" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="11" Connection="Output" />
+      <Destination ToolID="12" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="12" Connection="Output" />
+      <Destination ToolID="15" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="15" Connection="Output" />
+      <Destination ToolID="13" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="15" Connection="Output" />
+      <Destination ToolID="18" Connection="Input" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="False" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="False" />
+    <RunWithE2 value="True" />
+    <PredictiveToolsCodePage value="1252" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="False" />
+    <ShowConnectionStatusIsOn value="True" />
+    <ShowConnectionStatusOnlyWhenRunning value="True" />
+    <ZoomLevel value="0" />
+    <LayoutType>Horizontal</LayoutType>
+    <MetaInfo>
+      <NameIsFileName value="True" />
+      <Name>incident_nearest_fire_hydrant</Name>
+      <Description />
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author />
+      <Company />
+      <Copyright />
+      <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
+      <WorkflowId value="fea28a2b-2a6f-4a73-be88-4fd33b608aa1" />
+      <Telemetry>
+        <PreviousWorkflowId value="1434c1be-5af6-4c92-9c96-cee532052356" />
+        <OriginWorkflowId value="1434c1be-5af6-4c92-9c96-cee532052356" />
+      </Telemetry>
+    </MetaInfo>
+    <Events>
+      <Enabled value="True" />
+    </Events>
+  </Properties>
+</AlteryxDocument>
