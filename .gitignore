@@ -7,8 +7,10 @@ __pycache__/
 *.pyc
 *.pyo
 
+# Ignore models folder (if you don't want to track saved models)
 
 #ignore large data files
 data/fire_incidents.csv
 data/processed_fire_incidents.csv
 data/property_assessment.csv
+data/gen
